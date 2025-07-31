@@ -1,9 +1,48 @@
-body{
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
+}
+
+header{
     width: 100%;
-    height: 100vh;
     display: flex;
+    padding: 16px;
+    gap: 8px;
     justify-content: center;
-    align-items: center;
+    background-color: rgb(245, 170, 110);
+}
+
+main{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(248, 214, 186);
+}
+
+.carrossel-container {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrossel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slide 12s infinite;
+}
+
+.carrossel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0; /* Garante que cada imagem ocupe 100% */
+}
+
+/* Animação: desliza o carrossel */
+@keyframes slide {
+    0%, 20% { transform: translateX(0%); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 95% { transform: translateX(-300%); }
 }
