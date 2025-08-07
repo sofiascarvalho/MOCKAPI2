@@ -4,7 +4,7 @@ let slideIndex = 0;
 let totalSlides = 0;
 
 async function buscarImagens() {
-    const url = `http://localhost:3000/fotos`;
+    const url = `https://mockapi-7xmp.onrender.com/fotos`;
     const response = await fetch(url);
     return await response.json();
 }
