@@ -9,7 +9,8 @@ header{
     padding: 16px;
     gap: 8px;
     justify-content: center;
-    background-color: rgb(245, 170, 110);
+    background-color: rgb(136, 89, 237);
+    color: black;
 }
 
 main{
@@ -19,8 +20,8 @@ main{
 }
 
 .carrossel-container {
-    width: 400px;
-    height: 250px;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     position: relative;
 }
@@ -29,20 +30,56 @@ main{
     display: flex;
     width: 100%;
     height: 100%;
-    animation: slide 12s infinite;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel .slide {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
 }
 
 .carrossel img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    flex-shrink: 0; /* Garante que cada imagem ocupe 100% */
 }
 
-/* Animação: desliza o carrossel */
-@keyframes slide {
-    0%, 20% { transform: translateX(0%); }
-    25%, 45% { transform: translateX(-100%); }
-    50%, 70% { transform: translateX(-200%); }
-    75%, 95% { transform: translateX(-300%); }
+.carrossel .descricao {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 24px;
+    padding: 16px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Botões de navegação */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 36px;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.seta:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.seta.esquerda {
+    left: 10px;
+}
+
+.seta.direita {
+    right: 10px;
 }
